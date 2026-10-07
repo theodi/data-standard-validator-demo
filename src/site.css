@@ -1,0 +1,139 @@
+/*
+ * The page around <data-standard-validator>: ODI header, colour stripe and
+ * footer. The element styles itself in its shadow root; it is restyled here
+ * only through its --dsv-* tokens.
+ */
+
+:root {
+  --frame: #0b0c10;
+  --frame-text: #ffffff;
+  --frame-muted: rgba(255, 255, 255, 0.72);
+  --pink: #e6007e;
+  --blue: #2f8fd8;
+  --yellow: #f7bb27;
+  --teal: #11998e;
+  --sans: "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: var(--frame);
+  font: 16px/1.5 var(--sans);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+/* ---- Header ------------------------------------------------------------ */
+
+.masthead {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  min-height: 76px;
+  padding: 0 32px;
+  background: var(--frame);
+  color: var(--frame-text);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+.brand img { height: 40px; width: auto; display: block; }
+.brand strong { display: block; font-size: 1.05rem; line-height: 1.2; }
+.brand small { display: block; font-size: 0.8rem; color: var(--frame-muted); }
+
+.masthead nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+}
+.masthead nav a {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 14px;
+  color: var(--frame-text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+}
+.masthead nav a:hover { border-bottom-color: var(--frame-muted); }
+.masthead nav a[aria-current="page"] { border-bottom-color: var(--pink); }
+.masthead nav a.button {
+  align-self: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding: 10px 14px;
+  border: 2px solid var(--frame-text);
+}
+.masthead nav a.button:hover { background: var(--frame-text); color: var(--frame); }
+
+.stripe {
+  flex: none;
+  height: 5px;
+  background: linear-gradient(to right,
+    var(--pink) 0 25%, var(--blue) 25% 50%, var(--yellow) 50% 75%, var(--teal) 75% 100%);
+}
+
+/* ---- The validator ----------------------------------------------------- */
+
+data-standard-validator {
+  --dsv-text: #0b0c10;
+  --dsv-text-dim: #3d4148;
+  --dsv-border: #c4c8ce;
+  --dsv-surface-2: #f3f4f6;
+  --dsv-accent: #0b0c10;
+  --dsv-accent-text: #ffffff;
+  --dsv-link: #0b5cad;
+  --dsv-link-hover: #c4006b;
+  --dsv-radius: 0;
+  --dsv-sans: var(--sans);
+}
+
+/* ---- Footer ------------------------------------------------------------ */
+
+.footer {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 16px 32px;
+  background: var(--frame);
+  color: var(--frame-text);
+  font-size: 0.85rem;
+}
+.footer p { margin: 0; }
+.copyright { display: flex; align-items: center; gap: 12px; }
+.copyright img { height: 28px; width: auto; display: block; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer a { color: var(--frame-text); }
+.footer a:hover { color: var(--frame-muted); }
+
+/* ---- Narrow screens: the element stacks, so let the page scroll ---------- */
+
+@media (max-width: 860px) {
+  html, body { height: auto; }
+  .masthead, .footer { padding-left: 16px; padding-right: 16px; }
+  .masthead { padding-top: 12px; padding-bottom: 12px; }
+  .masthead nav { align-self: auto; gap: 4px; }
+  .masthead nav a { padding: 6px 8px; }
+  .masthead nav a.button { margin-left: 4px; }
+}

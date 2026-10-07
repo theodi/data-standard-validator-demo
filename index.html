@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0c10" />
+    <title>Data Validator – The Open Data Institute</title>
+    <meta name="description" content="Check JSON and JSON-LD records against SHACL shapes, in your browser." />
+    <link rel="icon" type="image/jpeg" href="./odi-logo.jpg" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="./">
+        <img src="./odi-logo.jpg" alt="" width="1200" height="628" />
+        <span>
+          <strong>The Open Data Institute</strong>
+          <small>Data Validator</small>
+        </span>
+      </a>
+      <nav aria-label="Site">
+        <a href="./" aria-current="page">Validator</a>
+        <a href="https://theodi.github.io/data-standard-validator-component/">Documentation</a>
+        <a class="button" href="https://theodi.org/" rel="noreferrer">theodi.org <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <div class="stripe" aria-hidden="true"></div>
+
+    <data-standard-validator theme="light"></data-standard-validator>
+
+    <footer class="footer">
+      <p class="copyright">
+        <img src="./odi-logo.jpg" alt="" width="1200" height="628" />
+        © The Open Data Institute 2026
+      </p>
+      <nav aria-label="Footer">
+        <a href="https://github.com/theodi/data-standard-validator">Source and command-line tool</a>
+        <a href="https://github.com/theodi/data-standard-validator/blob/main/docs/error-reference.md">What the messages mean</a>
+        <a href="https://github.com/theodi/data-standard-validator-demo/issues/new">Give feedback</a>
+      </nav>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
