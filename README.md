@@ -1,11 +1,30 @@
-# data-standard-validator-demo
+# data-standard-validator Demo
 
-A demo page for the [`<data-standard-validator>`](https://github.com/theodi/data-standard-validator-component)
-web component. It checks JSON and JSON-LD records against SHACL shapes, in the browser.
+Check JSON and JSON-LD records against SHACL shapes, entirely in your browser.
+This is a demo of the reusable [`<data-standard-validator>`](https://github.com/theodi/data-standard-validator-component)
+web component.
 
 **Live:** <https://theodi.github.io/data-standard-validator-demo/>
 
-**Documentation:** <https://theodi.github.io/data-standard-validator-component/>
+**Component documentation:** <https://theodi.github.io/data-standard-validator-component/>
+
+## What's here
+
+This project is a thin web application around the
+[data-standard-validator component](https://theodi.github.io/data-standard-validator-component/).
+The component does the real work: choosing a standard, loading examples,
+editing records, validating them and explaining the results. This repository
+adds only:
+
+| Path | Contents |
+| --- | --- |
+| `index.html`, `src/site.css` | The page around the component: header, footer and styles |
+| `src/config.js` | The standards offered on the page, passed to the component as its config |
+| `shapes/<name>/` | A SHACL shape (`*-shape.ttl`) and its JSON-LD context (`context.jsonld`) |
+| `examples/<name>/` | A valid and an invalid example record for each shape |
+
+To build your own validator page, copy this pattern and swap in your own
+standards and styling.
 
 ## Run locally
 
@@ -17,16 +36,7 @@ npm run dev      # http://localhost:5173/
 npm run build    # writes dist/
 ```
 
-Pushes to `main` deploy to GitHub Pages through `.github/workflows/pages.yml`.
-
-## What's here
-
-| Path | Contents |
-| --- | --- |
-| `index.html`, `src/site.css` | The page: header, footer and styles |
-| `src/config.js` | The standards the validator offers |
-| `shapes/<name>/` | A SHACL shape (`*-shape.ttl`) and its JSON-LD `context.jsonld` |
-| `examples/<name>/` | A valid and an invalid example record |
+Every push to `main` deploys to GitHub Pages through `.github/workflows/pages.yml`.
 
 ## Add a standard
 
@@ -34,5 +44,9 @@ Pushes to `main` deploy to GitHub Pages through `.github/workflows/pages.yml`.
 2. Add example records under `examples/<name>/`.
 3. Add an entry to `standards` in `src/config.js`.
 
-The config points at this repository's files on GitHub (`blob/main`), so new
-files appear on the page only after they are pushed to `main`.
+The page reads shapes and examples from this repository on GitHub, so a new
+standard appears only after it is pushed to `main`.
+
+## License
+
+Licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
