@@ -1,0 +1,28 @@
+@prefix ex: <http://example.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ProductShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Product ;
+    sh:property [
+        sh:path ex:sku ;
+        sh:minCount 1 ;
+        sh:minLength 8 ;
+        sh:maxLength 12 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path ex:price ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minExclusive 0.0 ;
+        sh:message "Price must be a positive decimal." ;
+    ] ;
+    sh:property [
+        sh:path ex:category ;
+        sh:minCount 1 ;
+        sh:in ( "Electronics" "Clothing" "Home" "Books" ) ; # Enumerated list
+        sh:message "Category must be Electronics, Clothing, Home, or Books." ;
+    ] .
