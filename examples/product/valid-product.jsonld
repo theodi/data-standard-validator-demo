@@ -1,0 +1,6 @@
+{
+  "@type": "Product",
+  "sku": "ABC-12345",
+  "price": "19.99",
+  "category": "Books"
+}

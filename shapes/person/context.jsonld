@@ -1,0 +1,12 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "Person": "schema:Person",
+    "PostalAddress": "schema:PostalAddress",
+    "name": "schema:name",
+    "email": "schema:email",
+    "address": "schema:address",
+    "streetAddress": "schema:streetAddress",
+    "postalCode": "schema:postalCode"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "ex": "http://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Product": "ex:Product",
+    "sku": "ex:sku",
+    "price": { "@id": "ex:price", "@type": "xsd:decimal" },
+    "category": "ex:category"
+  }
+}

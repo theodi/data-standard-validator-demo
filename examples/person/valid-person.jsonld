@@ -1,0 +1,10 @@
+{
+  "@type": "Person",
+  "name": "Ada Lovelace",
+  "email": "ada@example.org",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 High Street",
+    "postalCode": "AB1 2CD"
+  }
+}
