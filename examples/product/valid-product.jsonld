@@ -1,4 +1,5 @@
 {
+  "@context": "https://raw.githubusercontent.com/theodi/data-standard-validator-demo/main/shapes/product/context.jsonld",
   "@type": "Product",
   "sku": "ABC-12345",
   "price": "19.99",

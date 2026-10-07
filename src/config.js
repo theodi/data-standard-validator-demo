@@ -1,7 +1,10 @@
 /*
- * The standards the validator offers. Shapes, contexts and examples are
- * fetched from this repository on GitHub, so a new file works only once it
- * is pushed. The "Advanced" box on the page can swap `main` for another ref.
+ * The standards the validator offers. Shapes and examples are fetched from
+ * this repository on GitHub, so a new file works only once it is pushed. The
+ * "Advanced" box on the page can swap `main` for another ref.
+ *
+ * No context is set here: each record names its own in `@context`, so the
+ * examples work as they are and pasted records are checked the same way.
  *
  * See https://theodi.github.io/data-standard-validator-component/usage/ for
  * every config option.
@@ -15,7 +18,6 @@ export const config = {
       name: 'Person',
       description: 'A person with a name, an email address and a postal address.',
       shapes: `${REPO}/shapes/person/person-shape.ttl`,
-      context: `${REPO}/shapes/person/context.jsonld`,
       examples: [
         { name: 'Valid person', url: `${REPO}/examples/person/valid-person.jsonld` },
         { name: 'Invalid person', url: `${REPO}/examples/person/invalid-person.jsonld` },
@@ -25,7 +27,6 @@ export const config = {
       name: 'Product',
       description: 'A product with a SKU, a price and a category.',
       shapes: `${REPO}/shapes/product/product-shape.ttl`,
-      context: `${REPO}/shapes/product/context.jsonld`,
       examples: [
         { name: 'Valid product', url: `${REPO}/examples/product/valid-product.jsonld` },
         { name: 'Invalid product', url: `${REPO}/examples/product/invalid-product.jsonld` },
