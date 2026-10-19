@@ -33,13 +33,6 @@ export const config = {
       ],
     },
   ],
-  patterns: [
-    {
-      pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$',
-      description: 'an email address',
-      example: 'ada@example.org',
-    },
-  ],
   placeholder: 'Paste a JSON or JSON-LD record here, or load an example.',
   storageKey: 'dsv-demo:last',
 }

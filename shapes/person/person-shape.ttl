@@ -16,7 +16,7 @@ ex:PersonShape
         sh:path schema:email ;
         sh:minCount 1 ;
         sh:pattern "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" ;
-        sh:message "A valid email address is required." ;
+        sh:message "Use an email address - for example `ada@example.org`." ;
     ] ;
     sh:property [
         sh:path schema:address ;
