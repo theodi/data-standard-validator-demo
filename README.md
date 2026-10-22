@@ -26,6 +26,29 @@ adds only:
 To build your own validator page, copy this pattern and swap in your own
 standards and styling.
 
+## Link to an example
+
+Query parameters in the URL can open the page with a standard picked and an
+example already loaded. For example, this link opens the Product standard with
+the invalid product record in the editor, already validated:
+
+<https://theodi.github.io/data-standard-validator-demo/?shape=https://github.com/theodi/data-standard-validator-demo/blob/main/shapes/product/product-shape.ttl&example=https://github.com/theodi/data-standard-validator-demo/blob/main/examples/product/invalid-product.jsonld>
+
+| Parameter | Effect |
+| --- | --- |
+| `shape` | Picks the standard that uses this shape file. Repeat `shape=` for a standard with several shape files. |
+| `context` | Picks the standard that uses this JSON-LD context. |
+| `example` | Loads this record into the editor and validates it straight away. On its own, it picks the standard that lists it. A record that is not in `src/config.js` is still loaded. |
+
+- GitHub page links (`blob/...`) and raw links count as the same file.
+- A shape or context link at another ref, such as `blob/v1.0.0/...`, picks the
+  same standard and sets the shapes version to that ref.
+- Relative URLs resolve against the page.
+- Encode any URL that contains `&` or `#` with `encodeURIComponent`.
+
+See [Linking to a standard](https://theodi.github.io/data-standard-validator-component/usage/#linking-to-a-standard)
+in the component documentation for the details.
+
 ## Run locally
 
 Requires Node 22 or later.
