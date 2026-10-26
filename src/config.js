@@ -33,6 +33,5 @@ export const config = {
       ],
     },
   ],
-  placeholder: 'Paste a JSON or JSON-LD record here, or load an example.',
-  storageKey: 'dsv-demo:last',
+  placeholder: 'Paste a JSON or JSON-LD record here, or load an example.'
 }
