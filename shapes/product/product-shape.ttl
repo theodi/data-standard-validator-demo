@@ -11,6 +11,7 @@ ex:ProductShape
         sh:minLength 8 ;
         sh:maxLength 12 ;
         sh:datatype xsd:string ;
+        sh:message "Give a SKU of 8 to 12 characters - for example `ABC-12345`." ;
     ] ;
     sh:property [
         sh:path ex:price ;
