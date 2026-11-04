@@ -12,7 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@theodi/data-standard-validator-component": "github:theodi/data-standard-validator-component#main"
+    "@theodi/data-standard-validator-component": "^1.0.0"
   },
   "devDependencies": {
     "vite": "^6.0.0"
