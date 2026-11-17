@@ -1,0 +1,28 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "dialect": { "header": true, "trim": true },
+  "tableSchema": {
+    "aboutUrl": "#row-{_row}",
+    "columns": [
+      { "name": "name", "titles": "name", "propertyUrl": "http://schema.org/name" },
+      { "name": "email", "titles": "email", "propertyUrl": "http://schema.org/email" },
+      {
+        "name": "streetAddress", "titles": "streetAddress",
+        "aboutUrl": "#row-{_row}/address", "propertyUrl": "http://schema.org/streetAddress"
+      },
+      {
+        "name": "postalCode", "titles": "postalCode",
+        "aboutUrl": "#row-{_row}/address", "propertyUrl": "http://schema.org/postalCode"
+      },
+      {
+        "name": "address", "virtual": true,
+        "propertyUrl": "http://schema.org/address", "valueUrl": "#row-{_row}/address"
+      },
+      {
+        "name": "addressType", "virtual": true, "aboutUrl": "#row-{_row}/address",
+        "propertyUrl": "rdf:type", "valueUrl": "http://schema.org/PostalAddress"
+      },
+      { "name": "type", "virtual": true, "propertyUrl": "rdf:type", "valueUrl": "http://schema.org/Person" }
+    ]
+  }
+}
