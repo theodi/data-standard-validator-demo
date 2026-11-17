@@ -1,6 +1,6 @@
 # data-standard-validator Demo
 
-Check JSON and JSON-LD records against SHACL shapes, entirely in your browser.
+Check JSON, JSON-LD and CSV records against SHACL shapes, entirely in your browser.
 This is a demo of the reusable [`<data-standard-validator>`](https://github.com/theodi/data-standard-validator-component)
 web component.
 
@@ -20,8 +20,11 @@ adds only:
 | --- | --- |
 | `index.html`, `src/site.css` | The page around the component: header, footer and styles |
 | `src/config.js` | The standards offered on the page, passed to the component as its config |
-| `shapes/<name>/` | A SHACL shape (`*-shape.ttl`) and its JSON-LD context (`context.jsonld`) |
+| `shapes/<name>/` | A SHACL shape (`*-shape.ttl`), its JSON-LD context (`context.jsonld`) and, for standards that accept CSV, a [CSVW](https://theodi.github.io/data-standard-validator/csv/) mapping (`csv-metadata.json`) |
 | `examples/<name>/` | A valid and an invalid example record for each shape |
+
+The Person standard accepts CSV as well as JSON, so the page shows a
+**JSON | CSV** switch for it. Product accepts JSON only.
 
 To build your own validator page, copy this pattern and swap in your own
 standards and styling.
@@ -38,7 +41,8 @@ the invalid product record in the editor, already validated:
 | --- | --- |
 | `shape` | Picks the standard that uses this shape file. Repeat `shape=` for a standard with several shape files. |
 | `context` | Picks the standard that uses this JSON-LD context. |
-| `example` | Loads this record into the editor and validates it straight away. On its own, it picks the standard that lists it. A record that is not in `src/config.js` is still loaded. |
+| `csvw` | Picks the standard that uses this CSVW mapping, and opens it in CSV. |
+| `example` | Loads this record into the editor and validates it straight away. On its own, it picks the standard that lists it. A record that is not in `src/config.js` is still loaded. A `.csv` example opens in CSV. |
 
 - GitHub page links (`blob/...`) and raw links count as the same file.
 - A shape or context link at another ref, such as `blob/v1.0.0/...`, picks the

@@ -36,4 +36,6 @@ ex:AddressShape
     sh:property [
         sh:path schema:postalCode ;
         sh:minCount 1 ;
+        sh:pattern "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$" ;
+        sh:message "Use a UK postcode in capitals with one space - for example `AB1 2CD`." ;
     ] .

@@ -6,6 +6,9 @@
  * No context is set here: each record names its own in `@context`, so the
  * examples work as they are and pasted records are checked the same way.
  *
+ * A standard with `csvMetadata` also accepts CSV. Example URLs ending in `.csv`
+ * are listed when CSV is chosen; the others when JSON is chosen.
+ *
  * See https://theodi.github.io/data-standard-validator-component/usage/ for
  * every config option.
  */
@@ -18,9 +21,12 @@ export const config = {
       name: 'Person',
       description: 'A person with a name, an email address and a postal address.',
       shapes: `${REPO}/shapes/person/person-shape.ttl`,
+      csvMetadata: `${REPO}/shapes/person/csv-metadata.json`,
       examples: [
         { name: 'Valid person', url: `${REPO}/examples/person/valid-person.jsonld` },
         { name: 'Invalid person', url: `${REPO}/examples/person/invalid-person.jsonld` },
+        { name: 'Valid person', url: `${REPO}/examples/person/valid-person.csv` },
+        { name: 'Invalid person', url: `${REPO}/examples/person/invalid-person.csv` },
       ],
     },
     {
@@ -33,5 +39,5 @@ export const config = {
       ],
     },
   ],
-  placeholder: 'Paste a JSON or JSON-LD record here, or load an example.'
+  placeholder: 'Paste a record here, or load an example.'
 }
